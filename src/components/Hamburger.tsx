@@ -41,11 +41,12 @@ const StyledHamburger = styled.button`
     }
 `
 
-export const Hamburger = () => {
+export const Hamburger = ({ onClick }: { onClick: () => void }) => {
     const [open, setOpen] = useState(false)
 
     const handleClick = () => {
         setOpen(!open)
+        onClick()
     }
 
     return (
