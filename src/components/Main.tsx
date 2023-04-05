@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import { Navbar } from './Navbar'
+import { Landing } from './Landing'
 import { Introduction } from './Introduction'
+import { Footer } from './Footer'
 
 export const Main: React.FC = () => {
     return (
         <MainContainer>
             <Navbar />
+            <Landing />
             <Introduction />
-            <div>Main</div>
+            <Footer />
         </MainContainer>
     )
 }
