@@ -1,9 +1,9 @@
 import styled, { keyframes } from 'styled-components'
 import linkedin from '../assets/linkedin.png'
 import email from '../assets/email.png'
-import { Hamburger } from './Hamburger'
 import useResponsive from '../hooks/useResponsive'
 import { useEffect, useState } from 'react'
+import { Hamburger } from './Hamburger'
 
 export const Navbar: React.FC = () => {
     const { isMobile, isTablet, isDesktop } = useResponsive()
@@ -94,6 +94,7 @@ const NavbarContainer = styled.div`
     background-color: #242424;
     display: flex;
     color: lightgrey;
+    z-index: 1000;
 `
 
 const PanicP = styled.div`

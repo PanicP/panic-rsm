@@ -1,6 +1,23 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+export const Hamburger = ({ onClick }: { onClick: () => void }) => {
+    const [open, setOpen] = useState(false)
+
+    const handleClick = () => {
+        setOpen(!open)
+        onClick()
+    }
+
+    return (
+        <StyledHamburger open={open} onClick={handleClick}>
+            <div />
+            <div />
+            <div />
+        </StyledHamburger>
+    )
+}
+
 const StyledHamburger = styled.button`
     display: flex;
     flex-direction: column;
@@ -40,20 +57,3 @@ const StyledHamburger = styled.button`
         }
     }
 `
-
-export const Hamburger = ({ onClick }: { onClick: () => void }) => {
-    const [open, setOpen] = useState(false)
-
-    const handleClick = () => {
-        setOpen(!open)
-        onClick()
-    }
-
-    return (
-        <StyledHamburger open={open} onClick={handleClick}>
-            <div />
-            <div />
-            <div />
-        </StyledHamburger>
-    )
-}
