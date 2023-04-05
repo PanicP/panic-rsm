@@ -4,14 +4,33 @@ import backgroundTile from '../assets/background-tile.png'
 export const BlockWithBackground: React.FC = ({
     color,
     children,
+    header,
 }: {
     color: string
     children: React.ReactNode
-}) => <Container color={color}>{children}</Container>
+    header: string
+}) => (
+    <Container color={color}>
+        <HeaderContainer>
+            <Header>{header}</Header>
+        </HeaderContainer>
+        {children}
+    </Container>
+)
 
 const Container = styled.div`
     background-image: url(${backgroundTile});
     background-color: ${({ color }) => color || 'white'};
+    border: 2px solid white;
 `
 
-const Desc = styled.div``
+const HeaderContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
+const Header = styled.div`
+    padding: 2rem 0 1rem;
+    border-bottom: 2px solid white;
+    font-size: 2rem;
+    font-weight: bold;
+`

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import backgroundTile from '../assets/background-tile.png'
 import { BlockWithBackground } from './BlockWithBackground'
+
 export const Introduction: React.FC = () => {
     return (
-        <BlockWithBackground color="darkred">
+        <BlockWithBackground color="darkred" header="Who is me?">
             <Container>
                 <Desc>
                     <div>Who is me?</div>

@@ -95,6 +95,7 @@ const NavbarContainer = styled.div`
     display: flex;
     color: lightgrey;
     z-index: 1000;
+    border-bottom: 2px solid white;
 `
 
 const PanicP = styled.div`
