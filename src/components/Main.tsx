@@ -26,7 +26,7 @@ export const Main: React.FC = () => {
             <Hobbies />
             <ParallaxBackground image={taliyah} />
             <Contact />
-            {/* <ParallaxBackground /> */}
+            <ParallaxBackground image={brimstone} />
             <Footer />
         </MainContainer>
     )

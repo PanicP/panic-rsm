@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import linkedin from '../assets/linkedin.png'
 import email from '../assets/email.png'
+import github from '../assets/github.png'
 import useResponsive from '../hooks/useResponsive'
 import { useEffect, useState } from 'react'
 import { Hamburger } from './Hamburger'
@@ -29,6 +30,9 @@ export const Navbar: React.FC = () => {
                             <NavButton>Contact</NavButton>
                         </LeftContainer>
                         <RightContainer>
+                            <a href="https://github.com/PanicP" target="_blank">
+                                <Icon src={github} alt=""></Icon>
+                            </a>
                             <a
                                 href="https://www.linkedin.com/in/thunthian-p/"
                                 target="_blank"
@@ -65,6 +69,12 @@ export const Navbar: React.FC = () => {
                         <NavButtonMobile>Hobbies</NavButtonMobile>
                         <NavButtonMobile>Contact</NavButtonMobile>
 
+                        <a href="https://github.com/PanicP" target="_blank">
+                            <NavButtonMobile>
+                                <Icon src={github} alt=""></Icon>
+                                <div>PanicP</div>
+                            </NavButtonMobile>
+                        </a>
                         <a
                             href="https://www.linkedin.com/in/thunthian-p/"
                             target="_blank"
@@ -144,6 +154,7 @@ const Icon = styled.img`
     background-color: lightgrey;
     width: 1.5rem;
     height: 1.5rem;
+    border-radius: 4px;
 `
 
 const Pinpoint = styled.div`
@@ -174,7 +185,7 @@ const Dropdown = styled.div`
     width: 100vw;
     top: 0;
     background-color: #242424;
-
+    z-index: 1000;
     overflow: hidden;
     max-height: ${({ isOpen }) => (isOpen ? '1000px' : '0')};
     animation: ${({ isOpen }) => (isOpen ? slideDown : slideUp)} 0.5s

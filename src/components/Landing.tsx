@@ -31,9 +31,9 @@ const Banner = styled.div`
 `
 
 const Name = styled.div`
-    font-size: 4rem;
+    font-size: 3rem;
 `
 
 const Desc = styled.div`
-    font-size: 2rem;
+    font-size: 1.5rem;
 `

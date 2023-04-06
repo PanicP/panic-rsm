@@ -6,7 +6,7 @@ export const Contact: React.FC = () => {
         <BlockWithBackground color="darkgrey" header="Contact">
             <Container>
                 <div>
-                    Linkedin:{' '}
+                    Linkedin:&nbsp;&nbsp;
                     <a
                         href="https://www.linkedin.com/in/thunthian-p/"
                         target="_blank"
@@ -15,9 +15,15 @@ export const Contact: React.FC = () => {
                     </a>
                 </div>
                 <div>
-                    Email:{' '}
+                    Email:&nbsp;&nbsp;
                     <a href="mailto:thunthian.por@gmail.com">
                         thunthian.por@gmail.com
+                    </a>
+                </div>
+                <div>
+                    Github:&nbsp;&nbsp;
+                    <a href="https://github.com/PanicP" target="_blank">
+                        PanicP
                     </a>
                 </div>
             </Container>
