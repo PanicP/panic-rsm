@@ -8,21 +8,23 @@ import { Education } from './Education'
 import { Hobbies } from './Hobbies'
 import { Contact } from './Contact'
 import { ParallaxBackground } from './ParallaxBackground'
+import taliyah from '../assets/taliyah.jpg'
+import brimstone from '../assets/brimstone.png'
 
 export const Main: React.FC = () => {
     return (
         <MainContainer>
             <Navbar />
             <Landing />
-            <ParallaxBackground />
+            <ParallaxBackground image={taliyah} />
             <Introduction />
-            {/* <ParallaxBackground /> */}
+            <ParallaxBackground image={brimstone} />
             <WorkExperience />
-            {/* <ParallaxBackground /> */}
+            <ParallaxBackground image={taliyah} />
             <Education />
-            {/* <ParallaxBackground /> */}
+            <ParallaxBackground image={brimstone} />
             <Hobbies />
-            {/* <ParallaxBackground /> */}
+            <ParallaxBackground image={taliyah} />
             <Contact />
             {/* <ParallaxBackground /> */}
             <Footer />
