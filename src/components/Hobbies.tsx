@@ -3,7 +3,7 @@ import { BlockWithBackground } from './BlockWithBackground'
 
 export const Hobbies: React.FC = () => {
     return (
-        <BlockWithBackground color="darkyellow" header="Hobbies">
+        <BlockWithBackground color="darkorange" header="Hobbies">
             <Container></Container>
         </BlockWithBackground>
     )

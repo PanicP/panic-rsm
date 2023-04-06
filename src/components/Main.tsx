@@ -7,17 +7,24 @@ import { WorkExperience } from './WorkExperience'
 import { Education } from './Education'
 import { Hobbies } from './Hobbies'
 import { Contact } from './Contact'
+import { ParallaxBackground } from './ParallaxBackground'
 
 export const Main: React.FC = () => {
     return (
         <MainContainer>
             <Navbar />
             <Landing />
+            <ParallaxBackground />
             <Introduction />
+            {/* <ParallaxBackground /> */}
             <WorkExperience />
+            {/* <ParallaxBackground /> */}
             <Education />
+            {/* <ParallaxBackground /> */}
             <Hobbies />
+            {/* <ParallaxBackground /> */}
             <Contact />
+            {/* <ParallaxBackground /> */}
             <Footer />
         </MainContainer>
     )
