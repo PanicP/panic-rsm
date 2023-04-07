@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import taliyah from '../assets/taliyah.jpg'
 import brimstone from '../assets/brimstone.png'
@@ -9,6 +9,15 @@ const images = [taliyah, brimstone, taliyah, brimstone]
 export const Carousel = ({ isBackground }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [scrollbarWidth] = useScrollbar()
+    const containerRef = useRef(null)
+    const [containerWidth, setContainerWidth] = useState(0)
+
+    useEffect(() => {
+        const { current } = containerRef
+        if (current) {
+            setContainerWidth(current.offsetWidth)
+        }
+    }, [])
 
     useEffect(() => {
         const lastIndex = images.length - 1
@@ -27,9 +36,12 @@ export const Carousel = ({ isBackground }) => {
         setCurrentIndex(currentIndex + 1)
     }
 
+    console.log(containerWidth)
+
     return (
         <Container>
             <ImageSlider
+                ref={containerRef}
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {images.map((image, index) => (
@@ -38,6 +50,7 @@ export const Carousel = ({ isBackground }) => {
                         src={image}
                         isBackground={isBackground}
                         scrollbarWidth={scrollbarWidth}
+                        containerWidth={containerWidth}
                     />
                 ))}
                 <Image
@@ -45,6 +58,7 @@ export const Carousel = ({ isBackground }) => {
                     src={images[0]}
                     isBackground={isBackground}
                     scrollbarWidth={scrollbarWidth}
+                    containerWidth={containerWidth}
                 />
             </ImageSlider>
             {/* <LeftArrow onClick={handlePrev}>{'<'}</LeftArrow> */}
@@ -62,13 +76,18 @@ const Container = styled.div`
 const ImageSlider = styled.div`
     display: flex;
     transition: transform 0.3s ease-in-out;
+    width: 100%;
 `
 
 const Image = styled.img`
-    // width: ${(props) => (props.isBackground ? '100vw' : '100%')};
-    // height: ${(props) => (props.isBackground ? '100vh' : '100%')};
-    width: ${(props) => `calc(100vw - ${props.scrollbarWidth}px)`};
-    height: 100vh;
+    width: ${(props) =>
+        props.isBackground
+            ? `calc(100vw - ${props.scrollbarWidth}px)`
+            : `${props.containerWidth - 0.5}px`};
+    height: ${(props) =>
+        props.isBackground ? '100vh' : `${props.containerWidth * 0.6}px`};
+    // width: ${(props) => `calc(100vw - ${props.scrollbarWidth}px)`};
+    // height: 100vh;
     object-fit: cover;
 `
 

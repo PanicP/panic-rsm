@@ -30,6 +30,7 @@ export const Introduction: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
                         <div>- VueJS</div>
                         <div>- Svelte</div>
                         <div>- C#</div>
+                        <div>- NodeJS</div>
                     </div>
                     <div>
                         <SkillHeader>I can also use</SkillHeader>

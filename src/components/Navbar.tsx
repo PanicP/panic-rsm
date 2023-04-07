@@ -47,13 +47,34 @@ export const Navbar: React.FC = ({
                 introductionRef.current.scrollIntoView(options)
                 break
             case NAVIGATION.WORK_EXPERIENCE:
-                workExperienceRef.current.scrollIntoView(options)
+                // workExperienceRef.current.scrollIntoView(options)
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top:
+                        workExperienceRef.current.getBoundingClientRect().top -
+                        document.body.getBoundingClientRect().top -
+                        63,
+                })
                 break
             case NAVIGATION.EDUCATION:
-                educationRef.current.scrollIntoView(options)
+                // educationRef.current.scrollIntoView(options)
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top:
+                        educationRef.current.getBoundingClientRect().top -
+                        document.body.getBoundingClientRect().top -
+                        63,
+                })
                 break
             case NAVIGATION.HOBBIES:
-                hobbiesRef.current.scrollIntoView(options)
+                // hobbiesRef.current.scrollIntoView(options)
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top:
+                        hobbiesRef.current.getBoundingClientRect().top -
+                        document.body.getBoundingClientRect().top -
+                        63,
+                })
                 break
             case NAVIGATION.CONTACT:
                 contactRef.current.scrollIntoView(options)
