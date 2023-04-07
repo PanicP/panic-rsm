@@ -32,8 +32,12 @@ const Banner = styled.div`
 
 const Name = styled.div`
     font-size: 3rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: lightgrey;
 `
 
 const Desc = styled.div`
     font-size: 1.5rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: lightgrey;
 `
