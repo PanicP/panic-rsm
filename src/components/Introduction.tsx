@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
 
-export const Introduction: React.FC = () => {
+export const Introduction: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     return (
-        <BlockWithBackground color="darkred" header="Who is me?">
+        <BlockWithBackground fRef={fRef} color="darkred" header="Who is me?">
             <Container>
                 <Desc>
-                    <div>Who is me?</div>
                     <div>
                         I'm Thunthian Pornmuneewong, a web frontend develop from
                         Thailand who is currently living in Germany and studying
@@ -17,23 +16,26 @@ export const Introduction: React.FC = () => {
                         a skill set to be a better developer.
                     </div>
                 </Desc>
-                <div>
-                    My day-to-day comfort
-                    <div>HTML</div>
-                    <div>CSS</div>
-                    <div>JavaScript</div>
-                    <div>ReactJS</div>
-                </div>
-                <div>
-                    I have experienced in
-                    <div>VueJS</div>
-                    <div>Svelte</div>
-                    <div>C#</div>
-                </div>
-                <div>
-                    I can use
-                    <div>Git with Github</div>
-                </div>
+                <SkillContainer>
+                    <div>
+                        <SkillHeader>My day-to-day comfort</SkillHeader>
+
+                        <div>- HTML</div>
+                        <div>- CSS</div>
+                        <div>- JavaScript</div>
+                        <div>- ReactJS</div>
+                    </div>
+                    <div>
+                        <SkillHeader>I have experienced in</SkillHeader>
+                        <div>- VueJS</div>
+                        <div>- Svelte</div>
+                        <div>- C#</div>
+                    </div>
+                    <div>
+                        <SkillHeader>I can also use</SkillHeader>
+                        <div>- Git with Github</div>
+                    </div>
+                </SkillContainer>
             </Container>
         </BlockWithBackground>
     )
@@ -41,6 +43,26 @@ export const Introduction: React.FC = () => {
 
 const Container = styled.div`
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
 `
 
-const Desc = styled.div``
+const Desc = styled.div`
+    display: flex;
+    justify-content: center;
+
+    > div {
+        width: 50%;
+        min-width: 300px;
+    }
+`
+
+const SkillContainer = styled.div`
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: space-around;
+`
+
+const SkillHeader = styled.div`
+    font-size: 1.5rem;
+`

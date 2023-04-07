@@ -6,7 +6,25 @@ import useResponsive from '../hooks/useResponsive'
 import { useEffect, useState } from 'react'
 import { Hamburger } from './Hamburger'
 
-export const Navbar: React.FC = () => {
+const NAVIGATION = {
+    LANDING: 'landing',
+    INTRODUCTION: 'introduction',
+    WORK_EXPERIENCE: 'workExperience',
+    EDUCATION: 'education',
+    HOBBIES: 'hobbies',
+    CONTACT: 'contact',
+}
+
+export const Navbar: React.FC = ({
+    landingRef,
+    introductionRef,
+    workExperienceRef,
+    educationRef,
+    hobbiesRef,
+    contactRef,
+}: {
+    landingRef: HTMLElement
+}) => {
     const { isMobile, isTablet, isDesktop } = useResponsive()
     const [isOpenDropdown, setIsOpenDropdown] = useState(false)
 
@@ -16,18 +34,95 @@ export const Navbar: React.FC = () => {
         }
     }, [isMobile])
 
+    const handleNavigate = ({ target }: { target: string }) => {
+        const options = {
+            behavior: 'smooth',
+            block: 'center',
+        }
+        switch (target) {
+            case NAVIGATION.LANDING:
+                landingRef.current.scrollIntoView(options)
+                break
+            case NAVIGATION.INTRODUCTION:
+                introductionRef.current.scrollIntoView(options)
+                break
+            case NAVIGATION.WORK_EXPERIENCE:
+                workExperienceRef.current.scrollIntoView(options)
+                break
+            case NAVIGATION.EDUCATION:
+                educationRef.current.scrollIntoView(options)
+                break
+            case NAVIGATION.HOBBIES:
+                hobbiesRef.current.scrollIntoView(options)
+                break
+            case NAVIGATION.CONTACT:
+                contactRef.current.scrollIntoView(options)
+                break
+            default:
+                break
+        }
+    }
+
     return (
         <>
             <NavbarContainer>
-                <PanicP>PanicP</PanicP>
+                <PanicP
+                    onClick={() =>
+                        handleNavigate({
+                            target: NAVIGATION.LANDING,
+                        })
+                    }
+                >
+                    PanicP
+                </PanicP>
                 {!isMobile ? (
                     <>
                         <LeftContainer>
-                            <NavButton>Introduction</NavButton>
-                            <NavButton>Work Experiences</NavButton>
-                            <NavButton>Education</NavButton>
-                            <NavButton>Hobbies</NavButton>
-                            <NavButton>Contact</NavButton>
+                            <NavButton
+                                onClick={() =>
+                                    handleNavigate({
+                                        target: NAVIGATION.INTRODUCTION,
+                                    })
+                                }
+                            >
+                                Introduction
+                            </NavButton>
+                            <NavButton
+                                onClick={() =>
+                                    handleNavigate({
+                                        target: NAVIGATION.WORK_EXPERIENCE,
+                                    })
+                                }
+                            >
+                                Work Experiences
+                            </NavButton>
+                            <NavButton
+                                onClick={() =>
+                                    handleNavigate({
+                                        target: NAVIGATION.EDUCATION,
+                                    })
+                                }
+                            >
+                                Education
+                            </NavButton>
+                            <NavButton
+                                onClick={() =>
+                                    handleNavigate({
+                                        target: NAVIGATION.HOBBIES,
+                                    })
+                                }
+                            >
+                                Hobbies
+                            </NavButton>
+                            <NavButton
+                                onClick={() =>
+                                    handleNavigate({
+                                        target: NAVIGATION.CONTACT,
+                                    })
+                                }
+                            >
+                                Contact
+                            </NavButton>
                         </LeftContainer>
                         <RightContainer>
                             <a href="https://github.com/PanicP" target="_blank">
@@ -63,11 +158,51 @@ export const Navbar: React.FC = () => {
             <Pinpoint>
                 {isOpenDropdown && (
                     <Dropdown isOpen={isOpenDropdown}>
-                        <NavButtonMobile>Introduction</NavButtonMobile>
-                        <NavButtonMobile>Work Experiences</NavButtonMobile>
-                        <NavButtonMobile>Education</NavButtonMobile>
-                        <NavButtonMobile>Hobbies</NavButtonMobile>
-                        <NavButtonMobile>Contact</NavButtonMobile>
+                        <NavButtonMobile
+                            onClick={() =>
+                                handleNavigate({
+                                    target: NAVIGATION.LANDING,
+                                })
+                            }
+                        >
+                            Introduction
+                        </NavButtonMobile>
+                        <NavButtonMobile
+                            onClick={() =>
+                                handleNavigate({
+                                    target: NAVIGATION.INTRODUCTION,
+                                })
+                            }
+                        >
+                            Work Experiences
+                        </NavButtonMobile>
+                        <NavButtonMobile
+                            onClick={() =>
+                                handleNavigate({
+                                    target: NAVIGATION.EDUCATION,
+                                })
+                            }
+                        >
+                            Education
+                        </NavButtonMobile>
+                        <NavButtonMobile
+                            onClick={() =>
+                                handleNavigate({
+                                    target: NAVIGATION.HOBBIES,
+                                })
+                            }
+                        >
+                            Hobbies
+                        </NavButtonMobile>
+                        <NavButtonMobile
+                            onClick={() =>
+                                handleNavigate({
+                                    target: NAVIGATION.CONTACT,
+                                })
+                            }
+                        >
+                            Contact
+                        </NavButtonMobile>
 
                         <a href="https://github.com/PanicP" target="_blank">
                             <NavButtonMobile>

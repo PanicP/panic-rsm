@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
 
-export const Education: React.FC = () => {
+export const Education: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     return (
-        <BlockWithBackground color="darkgreen" header="Education">
+        <BlockWithBackground fRef={fRef} color="darkgreen" header="Education">
             <Container>
                 <Section>
                     <LeftSection>
@@ -58,6 +58,7 @@ const Container = styled.div`
 
 const Section = styled.div`
     display: flex;
+    padding: 1rem;
 `
 
 const LeftSection = styled.div`

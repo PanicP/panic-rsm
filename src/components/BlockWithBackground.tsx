@@ -5,12 +5,14 @@ export const BlockWithBackground: React.FC = ({
     color,
     children,
     header,
+    fRef,
 }: {
     color: string
     children: React.ReactNode
     header: string
+    fRef: HTMLElement
 }) => (
-    <Container color={color}>
+    <Container ref={fRef} color={color}>
         <HeaderContainer>
             <Header>{header}</Header>
         </HeaderContainer>

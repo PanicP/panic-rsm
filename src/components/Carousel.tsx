@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import taliyah from '../assets/taliyah.jpg'
 import brimstone from '../assets/brimstone.png'
+import useScrollbar from '../hooks/useScrollbar'
 
 const images = [taliyah, brimstone, taliyah, brimstone]
 
-export const Carousel = () => {
+export const Carousel = ({ isBackground }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [scrollbarWidth] = useScrollbar()
 
     useEffect(() => {
         const lastIndex = images.length - 1
@@ -31,9 +33,19 @@ export const Carousel = () => {
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {images.map((image, index) => (
-                    <Image key={index} src={image} />
+                    <Image
+                        key={index}
+                        src={image}
+                        isBackground={isBackground}
+                        scrollbarWidth={scrollbarWidth}
+                    />
                 ))}
-                <Image key={-1} src={images[0]} />
+                <Image
+                    key={-1}
+                    src={images[0]}
+                    isBackground={isBackground}
+                    scrollbarWidth={scrollbarWidth}
+                />
             </ImageSlider>
             {/* <LeftArrow onClick={handlePrev}>{'<'}</LeftArrow> */}
             <RightArrow onClick={handleNext}>{'>'}</RightArrow>
@@ -53,7 +65,9 @@ const ImageSlider = styled.div`
 `
 
 const Image = styled.img`
-    width: 100vw;
+    // width: ${(props) => (props.isBackground ? '100vw' : '100%')};
+    // height: ${(props) => (props.isBackground ? '100vh' : '100%')};
+    width: ${(props) => `calc(100vw - ${props.scrollbarWidth}px)`};
     height: 100vh;
     object-fit: cover;
 `

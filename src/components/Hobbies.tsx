@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
 
-export const Hobbies: React.FC = () => {
+export const Hobbies: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     return (
-        <BlockWithBackground color="darkorange" header="Hobbies">
+        <BlockWithBackground fRef={fRef} color="darkorange" header="Hobbies">
             <Container></Container>
         </BlockWithBackground>
     )

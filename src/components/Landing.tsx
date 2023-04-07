@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Carousel } from './Carousel'
 
-export const Landing: React.FC = () => {
+export const Landing: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     return (
-        <Container>
+        <Container ref={fRef}>
             <Banner>
                 <Name>Thunthian Pornmuneewong (PanicP)</Name>
                 <Desc>
@@ -11,7 +11,7 @@ export const Landing: React.FC = () => {
                     customer-facing websites.
                 </Desc>
             </Banner>
-            <Carousel />
+            <Carousel isBackground={true} />
         </Container>
     )
 }
