@@ -68,13 +68,7 @@ export const Navbar: React.FC = ({
                 break
             case NAVIGATION.HOBBIES:
                 // hobbiesRef.current.scrollIntoView(options)
-                window.scrollTo({
-                    behavior: 'smooth',
-                    top:
-                        hobbiesRef.current.getBoundingClientRect().top -
-                        document.body.getBoundingClientRect().top -
-                        63,
-                })
+                hobbiesRef.current.scrollIntoView(options)
                 break
             case NAVIGATION.CONTACT:
                 contactRef.current.scrollIntoView(options)
@@ -167,7 +161,6 @@ export const Navbar: React.FC = ({
                             <Hamburger
                                 onClick={() =>
                                     setIsOpenDropdown((prev) => {
-                                        console.log(prev)
                                         return !prev
                                     })
                                 }

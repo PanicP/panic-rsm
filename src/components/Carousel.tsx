@@ -36,8 +36,6 @@ export const Carousel = ({ isBackground }) => {
         setCurrentIndex(currentIndex + 1)
     }
 
-    console.log(containerWidth)
-
     return (
         <Container>
             <ImageSlider

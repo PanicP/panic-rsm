@@ -24,43 +24,9 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    /* scrollbar-gutter: stable both-edges; */
-    /* overflow: overlay; */
-    /* overflow: hidden; */
 }
 
 * {
     padding: 0;
     margin: 0;
 }
-
-/* *::-webkit-scrollbar {
-    display: none;
-} */
-
-/* Hide the default scrollbar */
-/* ::-webkit-scrollbar {
-    display: none;
-} */
-
-/* body {
-    overflow: overlay;
-}
-
-body::-webkit-scrollbar {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 8px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-body:hover::-webkit-scrollbar {
-    opacity: 1;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: lightgrey;
-    border-radius: 8px;
-    width: 6px;
-    height: 30px;
-} */
