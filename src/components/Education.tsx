@@ -17,10 +17,10 @@ export const Education: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
                         ></iframe>
                     </LeftSection>
                     <RightSection>
-                        <div>
+                        <SectionTitle>
                             Master of Applied Computer Science in Global
                             Software Development
-                        </div>
+                        </SectionTitle>
                         <div>Hochschule Fulda - Fulda, Germany</div>
                         <div>October 2022 - Present</div>
                     </RightSection>
@@ -37,9 +37,9 @@ export const Education: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
                         ></iframe>
                     </LeftSection>
                     <RightSection>
-                        <div>
+                        <SectionTitle>
                             Bachelor of Engineering in Computer Engineering
-                        </div>
+                        </SectionTitle>
                         <div>Kasetsart University - Bangkok, Thailand</div>
                         <div>June 2013 - May 2017</div>
                     </RightSection>
@@ -73,5 +73,9 @@ const RightSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 1.5rem;
+`
+
+const SectionTitle = styled.div`
     font-size: 2rem;
 `
