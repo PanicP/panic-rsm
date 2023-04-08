@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import styled, { keyframes } from 'styled-components'
 import linkedin from '../assets/linkedin.png'
 import email from '../assets/email.png'

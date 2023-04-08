@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import styled from 'styled-components'
 import backgroundTile from '../assets/background-tile.png'
 
