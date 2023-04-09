@@ -8,11 +8,12 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d dist"
+        "deploy": "npx gh-pages -d dist"
     },
     "dependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-spotify-embed": "^2.0.3",
         "styled-components": "^5.3.9"
     },
     "devDependencies": {

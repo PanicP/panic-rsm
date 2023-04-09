@@ -12,6 +12,8 @@ const ModalWrapper = styled.div`
     background-color: #242424;
     border-radius: 10px;
     z-index: 500;
+    max-height: 75vh;
+    overflow-y: auto;
 `
 
 const Backdrop = styled.div`

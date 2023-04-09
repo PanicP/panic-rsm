@@ -955,6 +955,14 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
+react-spotify-embed@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-spotify-embed/-/react-spotify-embed-2.0.3.tgz#3360c0fdf7994c0473cf262f0236aad75b0a820b"
+  integrity sha512-buiiaaPrGTyOlciJFJiHz1o2a4iSJMuH9ewi2KaIjVGcedz6szM8plz7Y6HtcDxApxCv2Rwx38xS1z8Zs3M/ZA==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
