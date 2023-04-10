@@ -76,7 +76,11 @@ export const Carousel = ({
                 />
             </ImageSlider>
             {/* <LeftArrow onClick={handlePrev}>{'<'}</LeftArrow> */}
-            <RightArrow onClick={handleNext}>{'>'}</RightArrow>
+            <RightArrow onClick={handleNext}>
+                <ContainerArrowIcon>
+                    <div>{'>'}</div>
+                </ContainerArrowIcon>
+            </RightArrow>
         </Container>
     )
 }
@@ -96,10 +100,13 @@ const ImageSlider = styled.div`
 const Image = styled.img`
     width: ${(props) =>
         props.isBackground
-            ? `calc(100vw - ${props.scrollbarWidth}px)`
-            : `${props.containerWidth - 0.5}px`};
+            ? `calc( ${props.containerWidth - props.scrollbarWidth}px)`
+            : // ? `calc(100vw - ${props.scrollbarWidth}px)`
+              `${props.containerWidth - 0.5}px`};
     height: ${(props) =>
-        props.isBackground ? '100vh' : `${props.containerWidth * 0.6}px`};
+        props.isBackground
+            ? `calc(100vh - 63px)`
+            : `${props.containerWidth * 0.6}px`};
     // width: ${(props) => `calc(100vw - ${props.scrollbarWidth}px)`};
     // height: 100vh;
     object-fit: cover;
@@ -112,9 +119,13 @@ const Arrow = styled.div`
     z-index: 10;
     cursor: pointer;
 
-    border: 1px solid grey;
+    border: 2px solid white;
     border-radius: 50%;
     padding: 2rem;
+
+    :hover {
+        background-color: grey;
+    }
 `
 
 const LeftArrow = styled(Arrow)`
@@ -123,4 +134,15 @@ const LeftArrow = styled(Arrow)`
 
 const RightArrow = styled(Arrow)`
     right: 3rem;
+`
+
+const ContainerArrowIcon = styled.div`
+    position: relative;
+
+    > div {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 2rem;
+    }
 `

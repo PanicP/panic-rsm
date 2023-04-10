@@ -7,6 +7,9 @@ import Modal from './Modal'
 import { useState } from 'react'
 import { Carousel } from './Carousel'
 import { Spotify } from 'react-spotify-embed'
+import workout from '../assets/hobbies/workout.jpg'
+import gaming from '../assets/hobbies/gaming.jpg'
+import music from '../assets/hobbies/music.jpg'
 
 export const Hobbies: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     const [isModalWorkoutOpen, setIsModalWorkoutOpen] = useState(false)
@@ -17,17 +20,17 @@ export const Hobbies: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
         {
             onClick: () => setIsModalWorkoutOpen(true),
             title: 'Workout',
-            image: 'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+            image: workout,
         },
         {
             onClick: () => setIsModalGamingOpen(true),
             title: 'Gaming',
-            image: 'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+            image: gaming,
         },
         {
             onClick: () => setIsModalMusicOpen(true),
             title: 'Music',
-            image: 'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+            image: music,
         },
     ]
 
@@ -258,7 +261,7 @@ const Container = styled.div`
 `
 
 const ContainerCard = styled.div`
-    width: 10%;
+    width: 20%;
 `
 
 const ContainerModal = styled.div`
