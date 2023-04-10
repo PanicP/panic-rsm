@@ -35,6 +35,16 @@ export const Carousel = ({
         }
     }, [])
 
+    // set interval
+    // useEffect(() => {
+    //     if (isBackground) {
+    //         const interval = setInterval(() => {
+    //             setCurrentIndex(currentIndex + 1)
+    //         }, 2000)
+    //         return () => clearInterval(interval)
+    //     }
+    // }, [])
+
     useEffect(() => {
         const lastIndex = _images.length - 1
         if (currentIndex < 0) {
@@ -75,7 +85,13 @@ export const Carousel = ({
                     containerWidth={containerWidth}
                 />
             </ImageSlider>
-            {/* <LeftArrow onClick={handlePrev}>{'<'}</LeftArrow> */}
+            {!isBackground && (
+                <LeftArrow onClick={handlePrev}>
+                    <ContainerArrowIcon>
+                        <div>{'<'}</div>
+                    </ContainerArrowIcon>
+                </LeftArrow>
+            )}
             <RightArrow onClick={handleNext}>
                 <ContainerArrowIcon>
                     <div>{'>'}</div>
@@ -100,7 +116,7 @@ const ImageSlider = styled.div`
 const Image = styled.img`
     width: ${(props) =>
         props.isBackground
-            ? `calc( ${props.containerWidth - props.scrollbarWidth}px)`
+            ? `calc( ${props.containerWidth}px)`
             : // ? `calc(100vw - ${props.scrollbarWidth}px)`
               `${props.containerWidth - 0.5}px`};
     height: ${(props) =>
