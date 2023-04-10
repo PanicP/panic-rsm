@@ -29,6 +29,7 @@ export const Landing: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
 
 const Container = styled.div`
     position: relative;
+    border-bottom: 2px solid white;
 `
 
 const Banner = styled.div`

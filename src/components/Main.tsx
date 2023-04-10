@@ -13,6 +13,12 @@ import { ParallaxBackground } from './ParallaxBackground'
 import taliyah from '../assets/taliyah.jpg'
 import brimstone from '../assets/brimstone.png'
 import { useRef } from 'react'
+import wallpaper1 from '../assets/wallpaper/wallpaper1.jpg'
+import wallpaper2 from '../assets/wallpaper/wallpaper2.jpg'
+import wallpaper3 from '../assets/wallpaper/wallpaper3.jpg'
+import wallpaper4 from '../assets/wallpaper/wallpaper4.jpg'
+import wallpaper5 from '../assets/wallpaper/wallpaper5.jpg'
+import wallpaper6 from '../assets/wallpaper/wallpaper6.jpg'
 
 export const Main: React.FC = () => {
     const landingRef = useRef(null)
@@ -33,17 +39,17 @@ export const Main: React.FC = () => {
                 contactRef={contactRef}
             />
             <Landing fRef={landingRef} />
-            <ParallaxBackground image={taliyah} />
+            <ParallaxBackground image={wallpaper1} />
             <Introduction fRef={introductionRef} />
-            <ParallaxBackground image={brimstone} />
+            <ParallaxBackground image={wallpaper2} />
             <WorkExperience fRef={workExperienceRef} />
-            <ParallaxBackground image={taliyah} />
+            <ParallaxBackground image={wallpaper3} />
             <Education fRef={educationRef} />
-            <ParallaxBackground image={brimstone} />
+            <ParallaxBackground image={wallpaper4} />
             <Hobbies fRef={hobbiesRef} />
-            <ParallaxBackground image={taliyah} />
+            <ParallaxBackground image={wallpaper5} />
             <Contact fRef={contactRef} />
-            <ParallaxBackground image={brimstone} />
+            <ParallaxBackground image={wallpaper6} />
             <Footer />
         </MainContainer>
     )
