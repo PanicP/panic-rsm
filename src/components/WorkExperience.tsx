@@ -13,7 +13,7 @@ export const WorkExperience: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
         >
             <Container>
                 {data.map((item, index) => (
-                    <Section>
+                    <Section key={index + item.header}>
                         <LeftSection>
                             <CarouselContainer>
                                 <Carousel isBackground={false} />

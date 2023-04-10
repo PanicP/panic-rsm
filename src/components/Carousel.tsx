@@ -6,13 +6,20 @@ import taliyah from '../assets/taliyah.jpg'
 import brimstone from '../assets/brimstone.png'
 import useScrollbar from '../hooks/useScrollbar'
 
-const images = [taliyah, brimstone, taliyah, brimstone]
+const defaultImages = [taliyah, brimstone, taliyah, brimstone]
 
-export const Carousel = ({ isBackground }) => {
+export const Carousel = ({
+    isBackground,
+    images,
+}: {
+    isBackground: boolean
+    images: string[]
+}) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [scrollbarWidth] = useScrollbar()
     const containerRef = useRef(null)
     const [containerWidth, setContainerWidth] = useState(0)
+    const [_images, setImages] = useState(defaultImages)
 
     useEffect(() => {
         const { current } = containerRef
@@ -21,14 +28,21 @@ export const Carousel = ({ isBackground }) => {
         }
     }, [])
 
+    // assign images
     useEffect(() => {
-        const lastIndex = images.length - 1
+        if (images && images.length > 0) {
+            setImages(images)
+        }
+    }, [])
+
+    useEffect(() => {
+        const lastIndex = _images.length - 1
         if (currentIndex < 0) {
             setCurrentIndex(lastIndex)
         } else if (currentIndex > lastIndex) {
             setCurrentIndex(0)
         }
-    }, [currentIndex, images])
+    }, [currentIndex, _images])
 
     const handlePrev = () => {
         setCurrentIndex(currentIndex - 1)
@@ -44,7 +58,7 @@ export const Carousel = ({ isBackground }) => {
                 ref={containerRef}
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-                {images.map((image, index) => (
+                {_images.map((image, index) => (
                     <Image
                         key={index}
                         src={image}
@@ -55,7 +69,7 @@ export const Carousel = ({ isBackground }) => {
                 ))}
                 <Image
                     key={-1}
-                    src={images[0]}
+                    src={_images[0]}
                     isBackground={isBackground}
                     scrollbarWidth={scrollbarWidth}
                     containerWidth={containerWidth}
