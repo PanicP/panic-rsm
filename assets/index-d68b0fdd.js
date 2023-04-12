@@ -156,7 +156,7 @@ Error generating stack: `+l.message+`
     animation: ${({isOpen:e})=>e?Qm:Km} 0.5s
         ease-in-out;
     transition: max-height 0.5s ease-in-out;
-`;L.div``;const Ma="/panic-rsm/assets/taliyah-be649be1.jpg",ja="/panic-rsm/assets/brimstone-3e26f71a.png",Jm=()=>{const[e,t]=B.useState(0);return B.useEffect(()=>{const n=document.createElement("div");n.style.position="absolute",n.style.top="-9999px",n.style.width="50px",n.style.height="50px",n.style.overflow="scroll",document.body.appendChild(n);const r=n.offsetWidth-n.clientWidth;document.body.removeChild(n),t(r)},[]),[e]},Zm=(e,t)=>{const n=B.useRef(),r=B.useRef(null),[i,l]=B.useState(0);B.useEffect(()=>{n.current=e},[e]),B.useEffect(()=>{function u(){n.current()}return r.current&&clearInterval(r.current),t!==null&&(r.current=setInterval(u,t)),()=>clearInterval(r.current)},[t,i]);function o(){l(i+1)}return{resetInterval:o}},qm=[Ma,ja,Ma,ja],hf=({isBackground:e,images:t,arrowColor:n})=>{const[r,i]=B.useState(0),[l]=Jm(),o=B.useRef(null),[u,s]=B.useState(0),[c,g]=B.useState(qm);B.useEffect(()=>{const{current:w}=o;w&&s(w.offsetWidth)},[]),B.useEffect(()=>{t&&t.length>0&&g(t)},[]),B.useEffect(()=>{const w=c.length-1;r<0?i(w):r>w&&i(0)},[r,c]);const{resetInterval:h}=Zm(()=>{i(e?r+1:r)},5e3),m=()=>{i(r-1)},S=()=>{i(r+1),e&&h()};return D(bm,{children:[D(e0,{ref:o,style:{transform:`translateX(-${r*100}%)`},children:[c.map((w,k)=>p(Fa,{src:w,isBackground:e,scrollbarWidth:l,containerWidth:u},k)),p(Fa,{src:c[0],isBackground:e,scrollbarWidth:l,containerWidth:u},-1)]}),c.length>1&&!e&&p(t0,{onClick:m,arrowColor:n,children:p(Ua,{children:p("div",{children:"<"})})}),c.length>1&&p(n0,{onClick:S,arrowColor:n,children:p(Ua,{children:p("div",{children:">"})})})]})},bm=L.div`
+`;L.div``;const Ma="/panic-rsm/assets/taliyah-be649be1.jpg",ja="/panic-rsm/assets/brimstone-3e26f71a.png",Jm=()=>{const[e,t]=B.useState(0);return B.useEffect(()=>{const n=document.createElement("div");n.style.position="absolute",n.style.top="-9999px",n.style.width="50px",n.style.height="50px",n.style.overflow="scroll",document.body.appendChild(n);const r=n.offsetWidth-n.clientWidth;document.body.removeChild(n),t(r)},[]),[e]},Zm=(e,t)=>{const n=B.useRef(),r=B.useRef(null),[i,l]=B.useState(0);return B.useEffect(()=>{n.current=e},[e]),B.useEffect(()=>{const u=()=>{n.current()};return r.current&&clearInterval(r.current),t!==null&&(r.current=setInterval(u,t)),()=>clearInterval(r.current)},[t,i]),{resetInterval:()=>{l(i+1)}}},qm=[Ma,ja,Ma,ja],hf=({isBackground:e,images:t,arrowColor:n})=>{const[r,i]=B.useState(0),[l]=Jm(),o=B.useRef(null),[u,s]=B.useState(0),[c,g]=B.useState(qm);B.useEffect(()=>{const{current:w}=o;w&&s(w.offsetWidth)},[]),B.useEffect(()=>{t&&t.length>0&&g(t)},[]),B.useEffect(()=>{const w=c.length-1;r<0?i(w):r>w&&i(0)},[r,c]);const{resetInterval:h}=Zm(()=>{i(e?r+1:r)},5e3),m=()=>{i(r-1)},S=()=>{i(r+1),e&&h()};return D(bm,{children:[D(e0,{ref:o,style:{transform:`translateX(-${r*100}%)`},children:[c.map((w,k)=>p(Fa,{src:w,isBackground:e,scrollbarWidth:l,containerWidth:u},k)),p(Fa,{src:c[0],isBackground:e,scrollbarWidth:l,containerWidth:u},-1)]}),c.length>1&&!e&&p(t0,{onClick:m,arrowColor:n,children:p(Ua,{children:p("div",{children:"<"})})}),c.length>1&&p(n0,{onClick:S,arrowColor:n,children:p(Ua,{children:p("div",{children:">"})})})]})},bm=L.div`
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -263,13 +263,11 @@ Error generating stack: `+l.message+`
 `,j0=L.div`
     display: flex;
 `,F0=L.div`
-    // flex: 1 0;
     display: flex;
     width: 50%;
     justify-content: center;
     align-items: center;
 `,U0=L.div`
-    // flex: 1;
     display: flex;
     width: 50%;
     flex-direction: column;
