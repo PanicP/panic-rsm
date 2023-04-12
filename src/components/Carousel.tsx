@@ -38,16 +38,6 @@ export const Carousel = ({
         }
     }, [])
 
-    // set interval
-    // useEffect(() => {
-    //     if (isBackground) {
-    //         const interval = setInterval(() => {
-    //             setCurrentIndex(currentIndex + 1)
-    //         }, 2000)
-    //         return () => clearInterval(interval)
-    //     }
-    // }, [])
-
     useEffect(() => {
         const lastIndex = _images.length - 1
         if (currentIndex < 0) {

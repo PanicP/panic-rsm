@@ -49,7 +49,6 @@ export const Navbar: React.FC = ({
                 introductionRef.current.scrollIntoView(options)
                 break
             case NAVIGATION.WORK_EXPERIENCE:
-                // workExperienceRef.current.scrollIntoView(options)
                 window.scrollTo({
                     behavior: 'smooth',
                     top:
@@ -59,7 +58,6 @@ export const Navbar: React.FC = ({
                 })
                 break
             case NAVIGATION.EDUCATION:
-                // educationRef.current.scrollIntoView(options)
                 window.scrollTo({
                     behavior: 'smooth',
                     top:
@@ -69,7 +67,6 @@ export const Navbar: React.FC = ({
                 })
                 break
             case NAVIGATION.HOBBIES:
-                // hobbiesRef.current.scrollIntoView(options)
                 hobbiesRef.current.scrollIntoView(options)
                 break
             case NAVIGATION.CONTACT:

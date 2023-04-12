@@ -114,7 +114,6 @@ export const WorkExperience: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
                     <Section key={index + item.header}>
                         <LeftSection>
                             <CarouselContainer>
-                                {/* {console.log(data.images)} */}
                                 <Carousel
                                     isBackground={false}
                                     images={item.images}
@@ -183,7 +182,6 @@ const Section = styled.div`
 `
 
 const LeftSection = styled.div`
-    // flex: 1 0;
     display: flex;
     width: 50%;
     justify-content: center;
@@ -191,7 +189,6 @@ const LeftSection = styled.div`
 `
 
 const RightSection = styled.div`
-    // flex: 1;
     display: flex;
     width: 50%;
     flex-direction: column;

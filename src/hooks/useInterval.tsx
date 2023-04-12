@@ -12,7 +12,7 @@ const useInterval = (callback, delay) => {
     }, [callback])
 
     useEffect(() => {
-        function tick() {
+        const tick = () => {
             savedCallback.current()
         }
 
@@ -27,7 +27,7 @@ const useInterval = (callback, delay) => {
         return () => clearInterval(intervalId.current)
     }, [delay, resetCount])
 
-    function resetInterval() {
+    const resetInterval = () => {
         setResetCount(resetCount + 1)
     }
 

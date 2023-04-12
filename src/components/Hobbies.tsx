@@ -40,7 +40,6 @@ export const Hobbies: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
                 {data.map((item, index) => (
                     <ContainerCard key={index + item.title}>
                         <Card
-                            // key={index + item.title}
                             onClick={item.onClick}
                             title={item.title}
                             image={item.image}
