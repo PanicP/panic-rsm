@@ -5,15 +5,18 @@ import styled from 'styled-components'
 import taliyah from '../assets/taliyah.jpg'
 import brimstone from '../assets/brimstone.png'
 import useScrollbar from '../hooks/useScrollbar'
+import useInterval from '../hooks/useInterval'
 
 const defaultImages = [taliyah, brimstone, taliyah, brimstone]
 
 export const Carousel = ({
     isBackground,
     images,
+    arrowColor,
 }: {
     isBackground: boolean
     images: string[]
+    arrowColor: string
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [scrollbarWidth] = useScrollbar()
@@ -54,12 +57,23 @@ export const Carousel = ({
         }
     }, [currentIndex, _images])
 
+    const { resetInterval } = useInterval(() => {
+        if (isBackground) {
+            setCurrentIndex(currentIndex + 1)
+        } else {
+            setCurrentIndex(currentIndex)
+        }
+    }, 5000)
+
     const handlePrev = () => {
         setCurrentIndex(currentIndex - 1)
     }
 
     const handleNext = () => {
         setCurrentIndex(currentIndex + 1)
+        if (isBackground) {
+            resetInterval()
+        }
     }
 
     return (
@@ -85,18 +99,20 @@ export const Carousel = ({
                     containerWidth={containerWidth}
                 />
             </ImageSlider>
-            {!isBackground && (
-                <LeftArrow onClick={handlePrev}>
+            {_images.length > 1 && !isBackground && (
+                <LeftArrow onClick={handlePrev} arrowColor={arrowColor}>
                     <ContainerArrowIcon>
                         <div>{'<'}</div>
                     </ContainerArrowIcon>
                 </LeftArrow>
             )}
-            <RightArrow onClick={handleNext}>
-                <ContainerArrowIcon>
-                    <div>{'>'}</div>
-                </ContainerArrowIcon>
-            </RightArrow>
+            {_images.length > 1 && (
+                <RightArrow onClick={handleNext} arrowColor={arrowColor}>
+                    <ContainerArrowIcon>
+                        <div>{'>'}</div>
+                    </ContainerArrowIcon>
+                </RightArrow>
+            )}
         </Container>
     )
 }
@@ -146,10 +162,16 @@ const Arrow = styled.div`
 
 const LeftArrow = styled(Arrow)`
     left: 3rem;
+    ${(props) =>
+        props.arrowColor &&
+        `color: ${props.arrowColor}; border-color: ${props.arrowColor};`}
 `
 
 const RightArrow = styled(Arrow)`
     right: 3rem;
+    ${(props) =>
+        props.arrowColor &&
+        `color: ${props.arrowColor}; border-color: ${props.arrowColor};`}
 `
 
 const ContainerArrowIcon = styled.div`

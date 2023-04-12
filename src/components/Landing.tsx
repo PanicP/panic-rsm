@@ -22,6 +22,7 @@ export const Landing: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
             <Carousel
                 isBackground={true}
                 images={[landing1, landing2, landing3, landing4]}
+                arrowColor="white"
             />
         </Container>
     )
