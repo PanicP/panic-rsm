@@ -35,7 +35,7 @@ export const Hobbies: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     ]
 
     return (
-        <BlockWithBackground fRef={fRef} color="darkorange" header="Hobbies">
+        <BlockWithBackground fRef={fRef} color="sienna" header="Hobbies">
             <Container>
                 {data.map((item, index) => (
                     <ContainerCard key={index + item.title}>

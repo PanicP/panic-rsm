@@ -5,7 +5,7 @@ import { BlockWithBackground } from './BlockWithBackground'
 
 export const Contact: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     return (
-        <BlockWithBackground fRef={fRef} color="darkgrey" header="Contact">
+        <BlockWithBackground fRef={fRef} color="black" header="Contact">
             <Container>
                 <div>
                     Linkedin:&nbsp;&nbsp;

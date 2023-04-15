@@ -106,7 +106,7 @@ export const WorkExperience: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
     return (
         <BlockWithBackground
             fRef={fRef}
-            color="darkblue"
+            color="midnightblue"
             header="Work Experience"
         >
             <Container>
