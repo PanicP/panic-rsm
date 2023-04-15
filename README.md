@@ -1,4 +1,4 @@
-## PanicP Resume
+# PanicP Resume
 
 Welcome to my project! This is a showcase of my software development skills, as well as a glimpse into my work experiences, education, hobbies, and contacts. I am excited to share some of my interests with you. Whether you are a potential employer, colleague, or fellow enthusiast, I hope you will find something of interest here. Please feel free to explore my portfolio and don't hesitate to reach out if you have any questions or comments. Thanks for stopping by!
 
