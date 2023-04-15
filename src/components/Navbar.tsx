@@ -329,11 +329,11 @@ const slideUp = keyframes`
 
 // will fix this later
 const Dropdown = styled.div`
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    top: 0;
+    top: 66px;
     background-color: #242424;
-    z-index: 1000;
+    z-index: 500;
     overflow: hidden;
     max-height: ${({ isOpen }) => (isOpen ? '1000px' : '0')};
     animation: ${({ isOpen }) => (isOpen ? slideDown : slideUp)} 0.5s
