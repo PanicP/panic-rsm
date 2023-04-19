@@ -1,10 +1,8 @@
-// @ts-nocheck
-
 import { useState, useEffect, useRef } from 'react'
 
-const useInterval = (callback, delay) => {
-    const savedCallback = useRef()
-    const intervalId = useRef(null)
+const useInterval = (callback: () => any, delay: number | null) => {
+    const savedCallback = useRef<any>(null)
+    const intervalId = useRef<any>(null)
     const [resetCount, setResetCount] = useState(0)
 
     useEffect(() => {
@@ -13,18 +11,20 @@ const useInterval = (callback, delay) => {
 
     useEffect(() => {
         const tick = () => {
-            savedCallback.current()
+            if (savedCallback) {
+                savedCallback.current()
+            }
         }
 
         if (intervalId.current) {
-            clearInterval(intervalId.current)
+            clearInterval(intervalId.current as number)
         }
 
         if (delay !== null) {
             intervalId.current = setInterval(tick, delay)
         }
 
-        return () => clearInterval(intervalId.current)
+        return () => clearInterval(intervalId.current as number)
     }, [delay, resetCount])
 
     const resetInterval = () => {
