@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 
-// @ts-nocheck
-
 const useScrollbar = () => {
     const [scrollbarWidth, setScrollbarWidth] = useState(0)
 

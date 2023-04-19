@@ -1,9 +1,12 @@
-// @ts-nocheck
-
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
+import { MutableRefObject } from 'react'
 
-export const Education: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
+type tEducationProps = { fRef: MutableRefObject<HTMLDivElement | null> }
+
+export const Education: React.FC<tEducationProps> = ({
+    fRef,
+}: tEducationProps) => {
     return (
         <BlockWithBackground fRef={fRef} color="darkgreen" header="Education">
             <Container>

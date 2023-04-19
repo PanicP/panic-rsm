@@ -1,19 +1,19 @@
-// @ts-nocheck
-
 import styled from 'styled-components'
 import backgroundTile from '../assets/background-tile.png'
 
-export const BlockWithBackground: React.FC = ({
+type tBlockWithBackgroundProps = {
+    color: string
+    children: React.ReactNode
+    header: string
+    fRef: any
+}
+
+export const BlockWithBackground: React.FC<tBlockWithBackgroundProps> = ({
     color,
     children,
     header,
     fRef,
-}: {
-    color: string
-    children: React.ReactNode
-    header: string
-    fRef: HTMLElement
-}) => (
+}: tBlockWithBackgroundProps) => (
     <Container ref={fRef} color={color}>
         <HeaderContainer>
             <Header>{header}</Header>

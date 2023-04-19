@@ -1,17 +1,15 @@
-// @ts-nocheck
-
 import { useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-
-export const Card = ({
-    onClick,
-    title,
-    image,
-}: {
+type tCardProps = {
     onClick: () => void
     title: string
     image: any
-}) => {
+}
+export const Card: React.FC<tCardProps> = ({
+    onClick,
+    title,
+    image,
+}: tCardProps) => {
     const [isHover, setIsHover] = useState(false)
 
     return (

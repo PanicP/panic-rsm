@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import taliyah from '../assets/taliyah.jpg'
@@ -9,15 +7,16 @@ import useInterval from '../hooks/useInterval'
 
 const defaultImages = [taliyah, brimstone, taliyah, brimstone]
 
-export const Carousel = ({
-    isBackground,
-    images,
-    arrowColor,
-}: {
+type tCarouselProps = {
     isBackground: boolean
     images: string[]
     arrowColor: string
-}) => {
+}
+export const Carousel: React.FC<tCarouselProps> = ({
+    isBackground,
+    images,
+    arrowColor,
+}: tCarouselProps) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [scrollbarWidth] = useScrollbar()
     const containerRef = useRef(null)
@@ -27,7 +26,7 @@ export const Carousel = ({
     useEffect(() => {
         const { current } = containerRef
         if (current) {
-            setContainerWidth(current.offsetWidth)
+            setContainerWidth((current as HTMLElement).offsetWidth)
         }
     }, [])
 
@@ -119,7 +118,11 @@ const ImageSlider = styled.div`
     width: 100%;
 `
 
-const Image = styled.img`
+const Image = styled.img<{
+    isBackground: boolean
+    containerWidth: number
+    scrollbarWidth: number
+}>`
     width: ${(props) =>
         props.isBackground
             ? `calc( ${props.containerWidth}px)`
@@ -150,14 +153,14 @@ const Arrow = styled.div`
     }
 `
 
-const LeftArrow = styled(Arrow)`
+const LeftArrow = styled(Arrow)<{ arrowColor: string }>`
     left: 3rem;
     ${(props) =>
         props.arrowColor &&
         `color: ${props.arrowColor}; border-color: ${props.arrowColor};`}
 `
 
-const RightArrow = styled(Arrow)`
+const RightArrow = styled(Arrow)<{ arrowColor: string }>`
     right: 3rem;
     ${(props) =>
         props.arrowColor &&

@@ -1,9 +1,16 @@
-// @ts-nocheck
-
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export const Hamburger = ({ onClick }: { onClick: () => void }) => {
+type tHamburgerProps = {
+    onClick: () => any
+}
+
+type tStyledHamburgerProps = {
+    open: boolean
+}
+export const Hamburger: React.FC<tHamburgerProps> = ({
+    onClick,
+}: tHamburgerProps) => {
     const [open, setOpen] = useState(false)
 
     const handleClick = () => {
@@ -20,7 +27,7 @@ export const Hamburger = ({ onClick }: { onClick: () => void }) => {
     )
 }
 
-const StyledHamburger = styled.button`
+const StyledHamburger = styled.button<tStyledHamburgerProps>`
     display: flex;
     flex-direction: column;
     justify-content: space-around;

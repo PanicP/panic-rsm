@@ -1,9 +1,10 @@
-// @ts-nocheck
-
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
+import { MutableRefObject } from 'react'
 
-export const Contact: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
+type tContactProps = { fRef: MutableRefObject<HTMLDivElement | null> }
+
+export const Contact: React.FC<tContactProps> = ({ fRef }: tContactProps) => {
     return (
         <BlockWithBackground fRef={fRef} color="black" header="Contact">
             <Container>

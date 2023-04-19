@@ -3,7 +3,11 @@
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
 
-export const Introduction: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
+type tIntroductionProps = { fRef: MutableRefObject<HTMLDivElement | null> }
+
+export const Introduction: React.FC<tIntroductionProps> = ({
+    fRef,
+}: tIntroductionProps) => {
     return (
         <BlockWithBackground fRef={fRef} color="darkred" header="Who is me?">
             <Container>

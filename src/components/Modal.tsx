@@ -1,7 +1,25 @@
-// @ts-nocheck
-
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+
+type tModalProps = {
+    children: React.ReactNode
+    onClose: () => any
+    isOpen: boolean
+}
+
+type tBackdropProps = {
+    isOpen: boolean
+}
+const Modal = ({ children, onClose, isOpen }: tModalProps) => {
+    return (
+        <>
+            <Backdrop onClick={onClose} isOpen={isOpen} />
+            {isOpen && <ModalWrapper>{children}</ModalWrapper>}
+        </>
+    )
+}
+
+export default Modal
 
 const ModalWrapper = styled.div`
     position: fixed;
@@ -16,7 +34,7 @@ const ModalWrapper = styled.div`
     overflow-y: auto;
 `
 
-const Backdrop = styled.div`
+const Backdrop = styled.div<tBackdropProps>`
     position: fixed;
     top: 0;
     left: 0;
@@ -27,14 +45,3 @@ const Backdrop = styled.div`
     opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
     transition: opacity 0.3s ease-in-out;
 `
-
-const Modal = ({ children, onClose, isOpen }) => {
-    return (
-        <>
-            <Backdrop onClick={onClose} isOpen={isOpen} />
-            {isOpen && <ModalWrapper>{children}</ModalWrapper>}
-        </>
-    )
-}
-
-export default Modal

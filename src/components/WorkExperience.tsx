@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import styled from 'styled-components'
 import { BlockWithBackground } from './BlockWithBackground'
 import { Carousel } from './Carousel'
@@ -16,6 +14,7 @@ import fg3 from '../assets/workexperience/fg3.png'
 import kp1 from '../assets/workexperience/kp1.png'
 import kp2 from '../assets/workexperience/kp2.png'
 import kp3 from '../assets/workexperience/kp3.png'
+import { MutableRefObject } from 'react'
 
 const data = [
     {
@@ -101,8 +100,10 @@ const data = [
         ],
     },
 ]
-
-export const WorkExperience: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
+type tWorkExperienceProps = { fRef: MutableRefObject<HTMLDivElement | null> }
+export const WorkExperience: React.FC<tWorkExperienceProps> = ({
+    fRef,
+}: tWorkExperienceProps) => {
     return (
         <BlockWithBackground
             fRef={fRef}

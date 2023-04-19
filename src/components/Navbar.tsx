@@ -17,16 +17,23 @@ const NAVIGATION = {
     CONTACT: 'contact',
 }
 
-export const Navbar: React.FC = ({
+type tNavbarProps = {
+    landingRef: MutableRefObject<HTMLDivElement | null>
+    introductionRef: MutableRefObject<HTMLDivElement | null>
+    workExperienceRef: MutableRefObject<HTMLDivElement | null>
+    educationRef: MutableRefObject<HTMLDivElement | null>
+    hobbiesRef: MutableRefObject<HTMLDivElement | null>
+    contactRef: MutableRefObject<HTMLDivElement | null>
+}
+
+export const Navbar: React.FC<tNavbarProps> = ({
     landingRef,
     introductionRef,
     workExperienceRef,
     educationRef,
     hobbiesRef,
     contactRef,
-}: {
-    landingRef: HTMLElement
-}) => {
+}: tNavbarProps) => {
     const { isMobile, isTablet, isDesktop } = useResponsive()
     const [isOpenDropdown, setIsOpenDropdown] = useState(false)
 
@@ -328,7 +335,7 @@ const slideUp = keyframes`
 `
 
 // will fix this later
-const Dropdown = styled.div`
+const Dropdown = styled.div<{ isOpen: boolean }>`
     position: fixed;
     width: 100vw;
     top: 66px;

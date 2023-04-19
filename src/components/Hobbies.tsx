@@ -11,7 +11,9 @@ import workout from '../assets/hobbies/workout.jpg'
 import gaming from '../assets/hobbies/gaming.jpg'
 import music from '../assets/hobbies/music.jpg'
 
-export const Hobbies: React.FC = ({ fRef }: { fRef: HTMLElement }) => {
+type tHobbiesProps = { fRef: MutableRefObject<HTMLDivElement | null> }
+
+export const Hobbies: React.FC<tHobbiesProps> = ({ fRef }: tHobbiesProps) => {
     const [isModalWorkoutOpen, setIsModalWorkoutOpen] = useState(false)
     const [isModalGamingOpen, setIsModalGamingOpen] = useState(false)
     const [isModalMusicOpen, setIsModalMusicOpen] = useState(false)
